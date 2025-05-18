@@ -1,13 +1,14 @@
 "use client"
 
 import Image from "next/image"
-import Link from "next/link"
+//import Link from "next/link"
 import { motion } from "framer-motion"
+import LetterGlitch from "./ui/LetterGlitch"
 
 export default function AboutSection() {
   return (
-    <section id="about" className="min-h-screen flex items-center py-20 px-6 md:px-12 lg:px-24">
-      <div className="w-full max-w-7xl mx-auto">
+    <section id="about" className="min-h-screen flex items-center py-20 px-6 md:px-12 lg:px-24 ">
+      <div className="w-full mx-auto">
         <motion.div
           className="flex flex-col lg:flex-row gap-12 items-center"
           initial={{ opacity: 0 }}
@@ -27,19 +28,25 @@ export default function AboutSection() {
               <Image
                 src="/about.jpg"
                 alt="Tech workspace"
-                width={600}
-                height={400}
+                width={650}
+                height={450}
                 className="w-full h-auto rounded-lg transform transition-transform duration-500 hover:scale-105"
               />
             </div>
-            <div className="absolute -bottom-6 -right-6 w-64 h-64 hidden md:block">
-              <Image
+            <div className="absolute -bottom-16 -right-6 w-48 h-44 hidden md:block">
+              {/* <Image
                 src="/about.jpg"
                 alt="Code background"
-                width={256}
-                height={256}
+                width={200}
+                height={200}
                 className="w-full h-full object-cover rounded-lg opacity-40"
-              />
+              /> */}
+              <LetterGlitch
+              glitchColors={["#ff0080", "#00ff80", "#8000ff"]} 
+                glitchSpeed={50}
+                centerVignette={true}
+                outerVignette={false}
+                smooth={true} />
               <div className="absolute inset-0 bg-gradient-to-br from-purple-900/60 to-black/80 rounded-lg"></div>
             </div>
           </motion.div>
@@ -84,7 +91,7 @@ export default function AboutSection() {
               modern web applications using React.js, Next.js, and cutting-edge frontend technologies.
             </motion.p>
 
-            <motion.div
+            {/* <motion.div
               initial={{ y: 20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.8 }}
@@ -132,9 +139,9 @@ export default function AboutSection() {
                   </div>
                 </motion.li>
               </ul>
-            </motion.div>
+            </motion.div> */}
 
-            <motion.div
+            {/* <motion.div
               className="flex flex-wrap gap-4 mt-8"
               initial={{ y: 20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
@@ -153,7 +160,7 @@ export default function AboutSection() {
               >
                 Download Resume
               </Link>
-            </motion.div>
+            </motion.div> */}
           </motion.div>
         </motion.div>
       </div>

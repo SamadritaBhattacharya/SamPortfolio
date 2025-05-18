@@ -1,10 +1,25 @@
+"use client"
 import Image from "next/image"
 import Link from "next/link"
 import { Github, Linkedin, ChevronDown } from "lucide-react"
 import AboutSection from "@/components/AboutSection"
-//import AboutSection from "@/components/about-section"
+import SkillsSection from "@/components/SkillsSection"
+import { ContainerScroll } from "@/components/ui/container-scroll-animation"
+import Project from "@/components/Projects"
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import Experience from "@/components/Experience"
+
 
 export default function Home() {
+   useEffect(() => {
+    AOS.init({
+      duration: 800, // animation duration in ms
+      once: true,    // whether animation should happen only once
+    })
+  }, [])
+
   return (
     <div className="min-h-screen flex flex-col text-white">
       {/* Hero Section with Background */}
@@ -101,7 +116,21 @@ export default function Home() {
           <ChevronDown size={20} className="animate-bounce" />
         </div>
       </div>
+      <ContainerScroll titleComponent=" About Me" >
+        <div className="flex flex-col items-center justify-center h-full">
+          {/* <h2 className="text-4xl md:text-5xl font-bold mb-4">About Me</h2>
+          <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+            I am a passionate frontend developer with a knack for creating beautiful and functional web applications.
+            Currently pursuing my B.Tech in Computer Science & IT at UEM Kolkata (2022-26), I specialize in building
+            modern web applications using React.js, Next.js, and cutting-edge frontend technologies.
+          </p>   */}
+          <AboutSection />
+        </div>
       <AboutSection />
+      </ ContainerScroll>
+      <SkillsSection />
+      <Project />
+      <Experience />
     </div>
   )
 }
