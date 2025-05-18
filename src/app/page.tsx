@@ -18,7 +18,7 @@ import { Router } from "next/router"
 export default function Home() {
   useEffect(() => {
     AOS.init({
-      duration: 800, // animation duration in ms
+      duration: 1000, // animation duration in ms
       once: true,    // whether animation should happen only once
     })
   }, [])
