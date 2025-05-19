@@ -13,6 +13,10 @@ import Experience from "@/components/Experience"
 import Navbar from "@/components/common/navbar"
 import { motion } from "framer-motion"
 import { Router } from "next/router"
+import Achievement from "@/components/Achievement"
+import SoftSkillsSection from "@/components/SoftSkills"
+import ContactUs from "@/components/ContactUs"
+import Footer from "@/components/common/footer"
 
 
 export default function Home() {
@@ -140,6 +144,11 @@ export default function Home() {
       <SkillsSection />
       <Project />
       <Experience />
+      <Achievement />
+      <SoftSkillsSection />
+      <ContactUs />
+
+      <Footer />
     </div>
   )
 }

@@ -5,7 +5,6 @@ import { Database, Server, Layout } from "lucide-react"
 import InfiniteScroll from "./InfiniteScroll"
 
 
-
 interface SkillBarProps {
   name: string
   percentage: number
@@ -84,12 +83,15 @@ const techStack3 = [
 ]
 
 export default function SkillsSection() {
+ 
+
   return (
     <div data-aos="fade-up">
-    <section id="skills" className="min-h-screen flex items-center py-20 px-6 md:px-12 lg:px-24 bg-[#0a0d16]">
-      <div className="w-full max-w-7xl mx-auto">
+      <section id="skills" className="min-h-screen flex flex-col gap-12 py-20 px-6 md:px-12 lg:px-24 bg-[#0a0d16]">
+
+        {/* Skills Title */}
         <motion.div
-          className="text-center mb-12"
+          className="text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -102,6 +104,7 @@ export default function SkillsSection() {
           </p>
         </motion.div>
 
+        {/* Skill Columns */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
           {/* Frontend Skills */}
           <motion.div
@@ -185,7 +188,7 @@ export default function SkillsSection() {
           </motion.div>
         </div>
 
-        {/* Tech Stack with Infinite Scroll */}
+        {/* Tech Stack Infinite Scroll Section */}
         <motion.div
           className="text-center mb-8"
           initial={{ opacity: 0, y: 20 }}
@@ -201,8 +204,7 @@ export default function SkillsSection() {
           <InfiniteScroll items={techStack2} direction="right" speed={2} />
           <InfiniteScroll items={techStack3} direction="left" speed={4} />
         </div>
-      </div>
-    </section>
+      </section>
     </div>
   )
 }
